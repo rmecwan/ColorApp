@@ -19,6 +19,9 @@ class ViewController: UIViewController {
     
     
     @IBAction func colorButton(_ sender: Any?) {
+        
+        self.view.endEditing(true)
+        
         if (redNumber.text == "") {
             redNumber.text = "0"
         }
@@ -28,7 +31,6 @@ class ViewController: UIViewController {
         if (blueNumber.text == "") {
             blueNumber.text = "0"
         }
-        
         
         UserDefaults.standard.set(redNumber.text, forKey: "red")
         UserDefaults.standard.set(greenNumber.text, forKey: "green")
