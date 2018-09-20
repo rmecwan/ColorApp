@@ -14,6 +14,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var greenNumber: UITextField!
     @IBOutlet weak var blueNumber: UITextField!
     
+    
+    @IBOutlet weak var colorView: UIView!
+    
+    
     @IBAction func colorButton(_ sender: Any) {
         if (redNumber.text == "") {
             redNumber.text = "0"
@@ -24,12 +28,19 @@ class ViewController: UIViewController {
         if (blueNumber.text == "") {
             blueNumber.text = "0"
         }
-        let redInt: Int? = Int(redNumber.text!)
-        let greenInt: Int? = Int(greenNumber.text!)
-        let blueInt: Int? = Int(blueNumber.text!)
+        let red = redNumber.text
+        let green = greenNumber.text
+        let blue = blueNumber.text
         
-        //colorView.backgroundColor = UIColor(red: CGFloat(redInt!/100), green: CGFloat(greenInt!/100), blue: CGFloat(blueInt!/100), alpha: 0.8)
+        let redInt: Int? = Int(red!)
+        let greenInt: Int? = Int(green!)
+        let blueInt: Int? = Int(blue!)
+        
+        
+        colorView.backgroundColor = UIColor(red: CGFloat(redInt!)/100.0, green: CGFloat(greenInt!)/100.0, blue: CGFloat(blueInt!)/100.0, alpha: 1.0) // Ask Professor Whitney if the color changes are appropriate
     }
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

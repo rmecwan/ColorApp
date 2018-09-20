@@ -79,6 +79,7 @@
                     </view>
                     <connections>
                         <outlet property="blueNumber" destination="aPD-nL-Zeh" id="O9a-6o-R6Z"/>
+                        <outlet property="colorView" destination="jMH-jq-swS" id="d0Q-kb-9BZ"/>
                         <outlet property="greenNumber" destination="t1i-Zu-kp9" id="VTh-Jf-nXF"/>
                         <outlet property="redNumber" destination="bUt-A0-YFt" id="rmR-2b-2MX"/>
                     </connections>
