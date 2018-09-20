@@ -69,15 +69,34 @@ class ViewController: UIViewController {
 
     
     
+    // get the point that you touch
+    // animate with duration or ...
+    // move the center to that coordinate
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first!
+        let location = touch.location(in: self.view) // getting it from the main view
+        colorView.center = location
+    }
+    
+    func animate(view: UIView) {
+        //activityIndicator.center = CGPointMake(view.width/2, view.height/2)
+        //colorView.center = location
+        //UIView.animate(withDuration: 0.3, animations: <#T##() -> Void#>)
+    }
+ 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     
-    override func touchesBegan(_ touches: Set<UITouch>? /* the optional is for when color button is pressed */, with event: UIEvent? /* the optional is for when color button is pressed */) {
+    /*override func touchesBegan(_ touches: Set<UITouch>? /* the optional is for when color button is pressed */, with event: UIEvent? /* the optional is for when color button is pressed */) {
         self.view.endEditing(true) // close the keyboard if outside the text field is touched
-    }
+    }*/
     
     
     override func didReceiveMemoryWarning() {
