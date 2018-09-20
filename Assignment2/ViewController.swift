@@ -10,6 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var redNumber: UITextField!
+    @IBOutlet weak var greenNumber: UITextField!
+    @IBOutlet weak var blueNumber: UITextField!
+    
+    @IBAction func colorButton(_ sender: Any) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

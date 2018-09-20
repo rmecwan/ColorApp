@@ -61,9 +61,12 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWe-RN-vRK">
-                                <rect key="frame" x="40" y="247" width="46" height="30"/>
+                                <rect key="frame" x="45" y="247" width="37" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Color"/>
+                                <connections>
+                                    <action selector="colorButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DoM-Nf-YaD"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jMH-jq-swS">
                                 <rect key="frame" x="67" y="341" width="240" height="128"/>
@@ -74,6 +77,11 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="blueNumber" destination="aPD-nL-Zeh" id="O9a-6o-R6Z"/>
+                        <outlet property="greenNumber" destination="t1i-Zu-kp9" id="VTh-Jf-nXF"/>
+                        <outlet property="redNumber" destination="bUt-A0-YFt" id="rmR-2b-2MX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
