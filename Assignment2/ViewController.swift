@@ -17,6 +17,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var colorView: UIView!
     
     
+    @IBOutlet var moveView: UIPanGestureRecognizer!
+    
+    
     @IBAction func redSlider(_ sender: UISlider) {
         redNumber.text = String(Int(sender.value))
     }
@@ -97,7 +100,46 @@ class ViewController: UIViewController {
         }
         self.colorButton(nil)
     }
-
+    
+    
+    @IBAction func movedView(_ sender: UIPanGestureRecognizer) {
+        let translation = sender.translation(in: colorView)
+        sender.view!.center = CGPoint(x: sender.view!.center.x + translation.x, y: sender.view!.center.y + translation.y)
+        
+        sender.setTranslation(CGPoint.zero, in: self.view)
+    }
+    
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
