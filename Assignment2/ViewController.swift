@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var colorView: UIView!
     
     
-    @IBAction func colorButton(_ sender: Any) {
+    @IBAction func colorButton(_ sender: Any?) {
         if (redNumber.text == "") {
             redNumber.text = "0"
         }
@@ -28,6 +28,11 @@ class ViewController: UIViewController {
         if (blueNumber.text == "") {
             blueNumber.text = "0"
         }
+        
+        
+        UserDefaults.standard.set(redNumber.text, forKey: "red")
+        UserDefaults.standard.set(greenNumber.text, forKey: "green")
+        UserDefaults.standard.set(blueNumber.text, forKey: "blue")
         let red = redNumber.text
         let green = greenNumber.text
         let blue = blueNumber.text
@@ -46,10 +51,32 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>? /* the optional is for when color button is pressed */, with event: UIEvent? /* the optional is for when color button is pressed */) {
+        self.view.endEditing(true) // close the keyboard if outside the text field is touched
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if let x = UserDefaults.standard.object(forKey: "red") as? String
+        {
+            redNumber.text = x
+        }
+        if let y = UserDefaults.standard.object(forKey: "green") as? String
+        {
+            greenNumber.text = y
+        }
+        if let z = UserDefaults.standard.object(forKey: "blue") as? String
+        {
+            blueNumber.text = z
+        }
+        self.colorButton(nil)
     }
 
 
