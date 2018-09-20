@@ -14,8 +14,25 @@ class ViewController: UIViewController {
     @IBOutlet weak var greenNumber: UITextField!
     @IBOutlet weak var blueNumber: UITextField!
     
-    
     @IBOutlet weak var colorView: UIView!
+    
+    
+    @IBAction func redSlider(_ sender: UISlider) {
+        redNumber.text = String(Int(sender.value))
+    }
+    
+    
+    @IBAction func greenSlider(_ sender: UISlider) {
+        greenNumber.text = String(Int(sender.value))
+    }
+    
+    
+    @IBAction func blueSlider(_ sender: UISlider) {
+        blueNumber.text = String(Int(sender.value))
+    }
+    
+    
+    
     
     
     @IBAction func colorButton(_ sender: Any?) {
@@ -39,9 +56,9 @@ class ViewController: UIViewController {
         let green = greenNumber.text
         let blue = blueNumber.text
         
-        let redInt: Int? = Int(red!)
-        let greenInt: Int? = Int(green!)
-        let blueInt: Int? = Int(blue!)
+        let redInt: Double? = Double(red!)
+        let greenInt: Double? = Double(green!)
+        let blueInt: Double? = Double(blue!)
         
         
         colorView.backgroundColor = UIColor(red: CGFloat(redInt!)/100.0, green: CGFloat(greenInt!)/100.0, blue: CGFloat(blueInt!)/100.0, alpha: 1.0) // Ask Professor Whitney if the color changes are appropriate
