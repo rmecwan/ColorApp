@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var greenNumber: UITextField!
     @IBOutlet weak var blueNumber: UITextField!
     
-    @IBOutlet weak var colorView: UIView!
+    @IBOutlet weak var colorView: UIView! // uilabel???
     @IBOutlet var moveView: UIPanGestureRecognizer!
     
     
@@ -46,6 +46,7 @@ class ViewController: UIViewController {
         let green = greenNumber.text
         let greenInt: Double? = Double(green!)
         greenSl.setValue(Float(greenInt!), animated: true)
+        
     }
     
     
@@ -53,17 +54,8 @@ class ViewController: UIViewController {
         let blue = blueNumber.text
         let blueInt: Double? = Double(blue!)
         blueSl.setValue(Float(blueInt!), animated: true)
+        
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     @IBAction func colorButton(_ sender: Any?) {
@@ -83,6 +75,8 @@ class ViewController: UIViewController {
         UserDefaults.standard.set(redNumber.text, forKey: "red")
         UserDefaults.standard.set(greenNumber.text, forKey: "green")
         UserDefaults.standard.set(blueNumber.text, forKey: "blue")
+        
+        
         let red = redNumber.text
         let green = greenNumber.text
         let blue = blueNumber.text
@@ -96,22 +90,19 @@ class ViewController: UIViewController {
     }
 
     
-    
     // get the point that you touch
     // animate with duration or ...
     // move the center to that coordinate
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let touch = touches.first!
+        /*let touch = touches.first!
         let location = touch.location(in: self.view) // getting it from the main view
-        colorView.center = location
-    }
-    
-    func animate(view: UIView) {
-        //activityIndicator.center = CGPointMake(view.width/2, view.height/2)
-        //colorView.center = location
-        //UIView.animate(withDuration: 0.3, animations: <#T##() -> Void#>)
+        colorView.center = location*/
+        if let touch = touches.first {
+            let location = touch.location(in: self.view)
+            colorView.center = CGPoint(x: location.x, y: location.y)
+        }
     }
  
     
@@ -136,14 +127,23 @@ class ViewController: UIViewController {
         if let x = UserDefaults.standard.object(forKey: "red") as? String
         {
             redNumber.text = x
+            let red = redNumber.text
+            let redInt: Double? = Double(red!)
+            redSl.setValue(Float(redInt!), animated: true)
         }
         if let y = UserDefaults.standard.object(forKey: "green") as? String
         {
             greenNumber.text = y
+            let green = greenNumber.text
+            let greenInt: Double? = Double(green!)
+            greenSl.setValue(Float(greenInt!), animated: true)
         }
         if let z = UserDefaults.standard.object(forKey: "blue") as? String
         {
             blueNumber.text = z
+            let blue = blueNumber.text
+            let blueInt: Double? = Double(blue!)
+            blueSl.setValue(Float(blueInt!), animated: true)
         }
         self.colorButton(nil)
     }
