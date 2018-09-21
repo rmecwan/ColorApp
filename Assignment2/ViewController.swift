@@ -15,24 +15,52 @@ class ViewController: UIViewController {
     @IBOutlet weak var blueNumber: UITextField!
     
     @IBOutlet weak var colorView: UIView!
-    
-    
     @IBOutlet var moveView: UIPanGestureRecognizer!
     
     
     @IBAction func redSlider(_ sender: UISlider) {
         redNumber.text = String(Int(sender.value))
     }
-    
-    
     @IBAction func greenSlider(_ sender: UISlider) {
         greenNumber.text = String(Int(sender.value))
     }
-    
-    
     @IBAction func blueSlider(_ sender: UISlider) {
         blueNumber.text = String(Int(sender.value))
     }
+    
+    // FUNCTIONALITY FOR MOVING THE SLIDER TO THE TEXT FIELD
+    
+    @IBOutlet weak var redSl: UISlider!
+    @IBOutlet weak var greenSl: UISlider!
+    @IBOutlet weak var blueSl: UISlider!
+    
+    
+    @IBAction func redField(_ sender: Any) {
+        let red = redNumber.text
+        let redInt: Double? = Double(red!)
+        redSl.setValue(Float(redInt!), animated: true)
+    }
+    
+    
+    @IBAction func greenField(_ sender: Any) {
+        let green = greenNumber.text
+        let greenInt: Double? = Double(green!)
+        greenSl.setValue(Float(greenInt!), animated: true)
+    }
+    
+    
+    @IBAction func blueField(_ sender: Any) {
+        let blue = blueNumber.text
+        let blueInt: Double? = Double(blue!)
+        blueSl.setValue(Float(blueInt!), animated: true)
+    }
+    
+    
+    
+    
+    
+    
+    
     
     
     

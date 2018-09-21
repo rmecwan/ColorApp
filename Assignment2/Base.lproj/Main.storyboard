@@ -45,6 +45,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <action selector="redField:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="JWk-hD-JiK"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t1i-Zu-kp9">
                                 <rect key="frame" x="109" y="132" width="97" height="30"/>
@@ -52,6 +55,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <action selector="greenField:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="9a6-aC-K3Q"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aPD-nL-Zeh">
                                 <rect key="frame" x="109" y="190" width="97" height="30"/>
@@ -59,6 +65,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <action selector="blueField:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="e0s-P1-LP5"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWe-RN-vRK">
                                 <rect key="frame" x="45" y="247" width="37" height="30"/>
@@ -104,10 +113,13 @@
                     </view>
                     <connections>
                         <outlet property="blueNumber" destination="aPD-nL-Zeh" id="O9a-6o-R6Z"/>
+                        <outlet property="blueSl" destination="uyD-Jg-66s" id="Sqm-5x-lsH"/>
                         <outlet property="colorView" destination="jMH-jq-swS" id="d0Q-kb-9BZ"/>
                         <outlet property="greenNumber" destination="t1i-Zu-kp9" id="VTh-Jf-nXF"/>
+                        <outlet property="greenSl" destination="TYT-Hq-7eM" id="piB-cd-sqK"/>
                         <outlet property="moveView" destination="w6a-LX-PMQ" id="DjK-Fj-pPV"/>
                         <outlet property="redNumber" destination="bUt-A0-YFt" id="rmR-2b-2MX"/>
+                        <outlet property="redSl" destination="sgB-jX-3bh" id="xk1-7T-3PG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
